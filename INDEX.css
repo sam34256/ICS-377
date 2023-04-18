@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.logo h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #2a3e63;
+}
+
+.login-box {
+  width: 100%;
+  padding: 40px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-box h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #2a3e63;
+}
+
+.login-box p {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #2a3e63;
+}
+
+.login-box input[type="email"],
+.login-box input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.login-box input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3d4b71;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.login-box input[type="submit"]:hover {
+  background-color: #2a3e63;
+}
+
+.forgot-password {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.forgot-password a {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2a3e63;
+}
+
+.need-account {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.need-account p {
+  font-size: 16px;
+  color: #2a3e63;
+}
+
+.need-account a {
+  font-size: 16px;
+  font-weight: 600;
+  color: #3d4b71;
+}
+
+.wave {
+  height: 150px;
+  width: 100%;
+  background-image: url("https://app.optinmonster.com/images/wave-pattern.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  margin-top: -100px;
+}
+
+.content {
+  margin-top: 60px;
+}
+.content h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #2a3e63;
+}
+
+.content p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.content ul {
+  list-style: disc;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.content ul li {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #666;
+}
+
+.footer {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 14px;
+  color: #666;
+}
+
+.footer a {
+  font-size: 14px;
+  color: #3d4b71;
+}

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Professional Calendar</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      text-align: center;
+      color: #2b2b2b;
+      margin-top: 50px;
+      margin-bottom: 30px;
+    }
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    label {
+      margin-right: 10px;
+    }
+    select, button {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      cursor: pointer;
+    }
+    select {
+      width: 150px;
+      margin-right: 10px;
+    }
+    button {
+      background-color: #007bff;
+      color: #fff;
+      margin-left: 10px;
+      transition: background-color 0.2s ease-in-out;
+    }
+    button:hover {
+      background-color: #0062cc;
+    }
+    table {
+      border-collapse: collapse;
+      margin: 0 auto;
+      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #e6e6e6;
+    }
+    th {
+      background-color: #007bff;
+      color: #fff;
+    }
+    tbody td:hover {
+      background-color: #f5f5f5;
+    }
+    #selected-date {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 24px;
+      color: #2b2b2b;
+    }
+    #meeting-details {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 18px;
+      color: #2b2b2b;
+    }
+    /* Animation styles */
+    #update-calendar-button {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+  </style>
+</head>
+<body>
+<h1>Professional Calendar</h1>
+<div>
+  <label for="start-month-dropdown">Start Month:</label>
+  <select id="start-month-dropdown"></select>
+  <label for="start-year-dropdown">Start Year:</label>
+  <select id="start-year-dropdown"></select>
+  <label for="end-month-dropdown">End Month:</label>
+  <select id="end-month-dropdown"></select>
+  <label for="end-year-dropdown">End Year:</label>
+  <select id="end-year-dropdown"></select>
+  <button id="update-calendar-button">Update Calendar</button>
+</div>
+<table id="calendar-table">
+  <thead>
+  <tr>
+    <th>Sun</th>
+    <th>Mon</th>
+    <th>Tue</th>
+    <th>Wed</th>
+    <th>Thu</th>
+    <th>Fri</th>
+    <th>Sat</th>
+  </tr>
+  </thead>
+  <tbody id="calendar-body"></tbody>
+</table>
+<div id="selected-date"></div>
+<div id="meeting-details"></div>
+<script>
+  const startMonthDropdown = document.querySelector("#start-month-dropdown");
+  const startYearDropdown = document.querySelector("#start-year-dropdown");
+  const endMonthDropdown = document.querySelector("#end-month-dropdown");
+  const endYearDropdown = document.querySelector("#end-year-dropdown");
+  const updateButton = document.querySelector("#update-calendar-button");
+  const calendarBody = document.querySelector("#calendar-body");
+  const selectedDate = document.querySelector("#selected-date");
+  const meetingDetails = document.querySelector("#meeting-details");
+
+  // Add months to start and end month dropdowns
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  for (let i = 0; i < months.length; i++) {
+    let option1 = document.createElement("option");
+    let option2 = document.createElement("option");
+    option1.text = option2.text = months[i];
+    option1.value = option2.value = i;
+    startMonthDropdown.add(option1);
+    endMonthDropdown.add(option2);
+  }
+
+  // Add years to start and end year dropdowns
+  const currentYear = new Date().getFullYear();
+  for (let i = currentYear; i <= currentYear + 10; i++) {
+    let option1 = document.createElement("option");
+    let option2 = document.createElement("option");
+    option1.text = option2.text = i;
+    option1.value = option2.value = i;
+    startYearDropdown.add(option1);
+    endYearDropdown.add(option2);
+  }
+
+  // Initialize calendar
+  const currentDate = new Date();
+  let currentMonth = currentDate.getMonth();
+  let currentYear = currentDate.getFullYear();
+  let selectedDay = currentDate.getDate();
+  let selectedMonth = currentMonth;
+  let selectedYear = currentYear;
+
+  function initCalendar(month, year) {
+    // Clear calendar body
+    calendarBody.innerHTML = "";
+
+    // Get number of days in month and first day of month
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const firstDayOfMonth = new Date(year, month, 1).getDay();
+
+    // Create cells for calendar
+    let date = 1;
+    for (let i = 0; i < 6; i++) {
+      // Create row for each week
+      const week = document.createElement("tr");
+      for (let j = 0; j < 7; j++) {
+        // Create cell for each day
+        const day = document.createElement("td");
+        if (i === 0 && j < firstDayOfMonth) {
+          // Create empty cells before first day of month
+          day.innerText = "";
+          day.classList.add("empty-cell");
+        } else if (date > daysInMonth) {
+          // Create empty cells after last day of month
+          day.innerText = "";
+          day.classList.add("empty-cell");
+        } else {
+          // Create cell for each day of month
+          day.innerText = date;
+          day.addEventListener("click", function() {
+            // Set selected day, month, and year
+            selectedDay = parseInt(this.innerText);
+
+            day.addEventListener("click", function () {
+              // Set selected day, month, and year
+              selectedDay = parseInt(this.innerText);
+              selectedMonth = month;
+              selectedYear = year;
+
+              // Update selected date display
+              selectedDate.innerText = `${months[selectedMonth]} ${selectedDay}, ${selectedYear}`;
+
+              // Display meeting details for selected date
+              displayMeetingDetails(selectedDay, selectedMonth, selectedYear);
+            });
+            // Highlight cell if it is the current date
+            if (date === currentDate.getDate() && year === currentDate.getFullYear() && month === currentDate.getMonth()) {
+              day.classList.add("current-date");
+            }
+            date++;
+
+          }
+          week.appendChild(day);
+        }
+        calendarBody.appendChild(week);
+      }
+// Update selected date display
+      selectedDate.innerText = `${months[selectedMonth]} ${selectedDay}, ${selectedYear}`;
+    }
+    // Display meeting details for selected date
+    function displayMeetingDetails(day, month, year) {
+// Clear meeting details
+      meetingDetails.innerHTML = "";
+      // Get and display meeting details for selected date
+      const meeting = getMeeting(day, month, year);
+      if (meeting) {
+        const heading = document.createElement("h2");
+        heading.innerText = "Meeting Details:";
+        const date = document.createElement("p");
+        date.innerText = `Date: ${months[month]} ${day}, ${year}`;
+        const time = document.createElement("p");
+        time.innerText = `Time: ${meeting.time}`;
+        const location = document.createElement("p");
+        location.innerText = `Location: ${meeting.location}`;
+        meetingDetails.appendChild(heading);
+        meetingDetails.appendChild(date);
+        meetingDetails.appendChild(time);
+        meetingDetails.appendChild(location);
+      } else {
+        const message = document.createElement("p");
+        message.innerText = "No meeting scheduled for selected date.";
+        meetingDetails.appendChild(message);
+      }
+// Get meeting details for selected date
+      function getMeeting(day, month, year) {
+// Replace this function with your own code to retrieve meeting details from a database or API
+        const meetings = [
+          {
+            date: new Date(2023, 3, 25),
+            time: "3:00 PM",
+            location: "123 Main St."
+          },
+          {
+            date: new Date(2023, 3, 26),
+            time: "10:00 AM",
+            location: "456 Elm St."
+          },
+          {
+            date: new Date(2023, 4, 3),
+            time: "2:00 PM",
+            location: "789 Oak St."
+          }
+        ];
+        const meeting = meetings.find(m => m.date.getDate() === day && m.date.getMonth() === month && m.date.getFullYear() === year);
+        return meeting;
+      }
+
+// Initialize calendar with current month and year
+      initCalendar(currentMonth, currentYear);
+
+// Update calendar when "Update" button is clicked
+      updateButton.addEventListener("click", function() {
+        const startMonth = parseInt(startMonthDropdown.value);
+        const startYear = parseInt(startYearDropdown.value);
+        const endMonth = parseInt(endMonthDropdown.value);
+        const endYear = parseInt(endYearDropdown.value);
+        // Check that start date is before end date
+        if (startYear > endYear || (startYear === endYear && startMonth > endMonth)) {
+          alert("Invalid date range.");
+          return;
+        }
+
+// Clear selected date and meeting details
+        selectedDate.innerText = "";
+        meetingDetails.innerHTML = "";
+
+// Initialize calendar with start month and year
+        initCalendar(startMonth, startYear);
+      });}}
+</script>
+</body>
+</html>

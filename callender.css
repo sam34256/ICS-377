@@ -1,0 +1,24 @@
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+thead th {
+  background-color: #ddd;
+}
+
+td {
+  background-color: #fff;
+}
+
+.today {
+  background-color: #eee;
+}
+
+.event {
+  background-color: #99ff99;
+}

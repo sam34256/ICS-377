@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Outlook Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="Email.css">
+</head>
+<body>
+<div class="header">
+  <img src="https://i.imgur.com/3qjgzqb.png" alt="Outlook Logo">
+  <div class="search-bar">
+    <input type="text" placeholder="Search mail and people">
+    <button><i class="material-icons">search</i></button>
+  </div>
+  <button class="compose-btn"><i class="material-icons">create</i>Compose</button>
+</div>
+<div class="content">
+  <div class="sidebar">
+    <ul>
+      <li class="active">Inbox</li>
+      <li>Sent</li>
+      <li>Drafts</li>
+      <li>Deleted</li>
+    </ul>
+  </div>
+  <div class="email-list">
+    <div class="email unread">
+      <div class="sender">John Doe</div>
+      <div class="subject">Meeting Agenda</div>
+      <div class="date">10:00 AM</div>
+      <div class="body">This is a reminder that we have a meeting scheduled for tomorrow at 10am in the conference room. The agenda for the meeting is as follows:</div>
+    </div>
+    <div class="email">
+      <div class="sender">Jane Smith</div>
+      <div class="subject">Reminder: Deadline Approaching</div>
+      <div class="date">Yesterday</div>
+      <div class="body">Just a friendly reminder that the deadline for the project is fast approaching. Let me know if you need any assistance.</div>
+    </div>
+    <div class="email">
+      <div class="sender">Bob Johnson</div>
+      <div class="subject">New Project Proposal</div>
+      <div class="date">2 days ago</div>
+      <div class="body">I have attached a proposal for a new project. Please let me know if you have any questions or concerns.</div>
+    </div>
+  </div>
+  <div class="email-view">
+    <h1>Meeting Agenda</h1>
+    <div class="sender">From: John Doe</div>
+    <div class="date">April 17, 2023 at 10:00 AM</div>
+    <div class="body">
+      <p>Dear all,</p>
+      <p>This is a reminder that we have a meeting scheduled for tomorrow at 10am in the conference room. The agenda for the meeting is as follows:</p>
+      <ol>
+        <li>Introduction</li>
+        <li>Review of previous meeting minutes</li>
+        <li>New business</li>
+        <li>Any other business</li>
+      </ol>
+      <p>Please let me know if you have any questions or concerns.</p>
+      <p>Best regards,</p>
+      <p>John</p>
+    </div>
+  </div>
+</div>
+<div class="compose-modal">
+  <div class="compose-header">
+    <h2>New Message</h2>
+    <button class="close-btn"><i class="material-icons">close</i></button>
+  </div>
+  <form>
+    <div class="form-group">
+      <label for="to">To:</label>
+      <input type="text" id="to" name="to">
+    </div>
+    <div class="form-group">
+      <label for="cc">Cc:</label>
+      <input type="text" id="cc" name="cc">
+    </div>
+    <div class="form-group">
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" name="subject">
+    </div>
+    <div class="form-group">
+      <label for="message">Message:</label>
+      <textarea id="message" name="message"></textarea>
+    </div>
+    <button class="send-btn">Send</button>
+  </form>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
