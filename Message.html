@@ -1,36 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Messaging Page</title>
-  <link rel="stylesheet" href="Message.css" />
+  <title>Teams Chat</title>
+  <link rel="stylesheet" href="Message.css">
 </head>
 <body>
-<button id="chat-btn" class="chat-btn">
-  <i class="fas fa-comment"></i>
-</button>
-<div id="chat" class="chat">
-  <div class="chat-header">
-    <h2>Chat</h2>
-    <button id="chat-close-btn" class="chat-close-btn">
-      <i class="fas fa-times"></i>
-    </button>
+<div class="container">
+  <div class="header">
+    <h1>Teams Chat</h1>
+    <div class="profile">
+      <img src="profile.jpg" alt="Profile Picture">
+      <span>John Doe</span>
+    </div>
   </div>
-  <div id="chat-messages" class="chat-messages"></div>
-  <form id="chat-form" class="chat-form">
-    <input
-      type="text"
-      id="chat-input"
-      class="chat-input"
-      placeholder="Type a message..."
-    />
-    <button type="submit" class="chat-send-btn">
-      <i class="fas fa-paper-plane"></i>
-    </button>
-  </form>
+  <div class="content">
+    <div class="sidebar">
+      <ul>
+        <li><a href="#">Inbox</a></li>
+        <li><a href="#">Sent Messages</a></li>
+        <li><a href="#">Drafts</a></li>
+        <li><a href="#">Trash</a></li>
+        <li class="active"><a href="#">Chats</a></li>
+      </ul>
+    </div>
+    <div class="main">
+      <div class="chat-list">
+        <div class="chat-item">
+          <img src="user1.jpg" alt="User Profile Picture">
+          <div class="chat-info">
+            <h2>User 1</h2>
+            <p>Last message received: Hello John, how are you doing?</p>
+          </div>
+          <div class="chat-time">
+            <p>12:30 PM</p>
+          </div>
+        </div>
+        <div class="chat-item">
+          <img src="user2.jpg" alt="User Profile Picture">
+          <div class="chat-info">
+            <h2>User 2</h2>
+            <p>Last message received: Can you send me the project proposal?</p>
+          </div>
+          <div class="chat-time">
+            <p>Yesterday</p>
+          </div>
+        </div>
+        <div class="chat-item">
+          <img src="user3.jpg" alt="User Profile Picture">
+          <div class="chat-info">
+            <h2>User 3</h2>
+            <p>Last message received: Just wanted to give you a heads up about the meeting tomorrow.</p>
+          </div>
+          <div class="chat-time">
+            <p>Yesterday</p>
+          </div>
+        </div>
+        <div class="chat-item">
+          <img src="user4.jpg" alt="User Profile Picture">
+          <div class="chat-info">
+            <h2>User 4</h2>
+            <p>Last message received: Thanks for the help with the code review.</p>
+          </div>
+          <div class="chat-time">
+            <p>2 days ago</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<script src="script.js"></script>
 </body>
 </html>

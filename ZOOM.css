@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #F4F4F4;
+}
+header img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px;
+}
+.video-feed, .chat-window, .participants-list {
+  flex-basis: calc(33.33% - 20px);
+  margin-bottom: 20px;
+}
+.video-feed img {
+  width: 100%;
+  height: auto;
+}
+.chat-window h2, .participants-list h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.chat-window ul {
+  list-style: none;
+  margin-bottom: 10px;
+}
+.chat-window li {
+  margin-bottom: 5px;
+}
+.chat-window li strong {
+  font-weight: bold;
+  margin-right: 5px;
+}
+.chat-window form {
+  display: flex;
+  margin-top: 10px;
+}
+.chat-window input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.chat-window
+
+button[type="submit"] {
+  background-color: #0078FF;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.chat-window button[type="submit"]:hover {
+  background-color: #0056C2;
+}
+.participants-list ul {
+  list-style: none;
+}
+.participants-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.participants-list li img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+.participants-list li span {
+  font-weight: bold;
+  margin-right: 10px;
+}
+.exit-btn {
+  background-color: #FF3B30;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.exit-btn:hover {
+  background-color: #C4262E;
+}
+@media only screen and (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+  .video-feed, .chat-window, .participants-list {
+    flex-basis: 100%;
+  }
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  background-color: black;
+  color: white;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.hamburger-icon {
+  display: inline-block;
+  cursor: pointer;
+  padding: 12px 16px;
+  color: white;
+  background-color: #333;
+  border: none;
+}
+
+.icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  margin: 4px 0;
+  background-color: white;
+}
+
+.dropdown-item {
+  color: white;
+}

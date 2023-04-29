@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>My Google Calendar</title>
+  <link rel="stylesheet" href="callender.css">
+
+</head>
+<body>
+<div class="dropdown">
+  <button class="hamburger-icon"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+  <div class="dropdown-content">
+    <a href="Email.html">Email</a>
+    <a href="Message.html">Messaging</a>
+    <a href="Videocall.html">Video</a>
+    <a href="#">Search</a>
+    <a href="FILESHARING.html">Document Sharing</a>
+    <a href="#">Notes</a>
+  </div>
+</div>
+<h1>My Google Calendar
+</h1>
+<div class="iframe-container"><iframe src="https://calendar.google.com/calendar/embed?src=48a82016ecd748bc204730adfc228580414311c777d67c4f915c5b81aafaa797%40group.calendar.google.com&ctz=America%2FChicago" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+</div>
+<button id="schedule-btn">Schedule an Appointment</button>
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Schedule an Appointment</h2>
+    <form id="schedule-form">
+      <label class="schedule-label" for="title">Title:</label>
+      <input class="modal-input schedule-input" type="text" id="title" name="title" required>
+      <label class="schedule-label" for="date">Date:</label>
+      <input class="modal-input schedule-input" type="date" id="date" name="date" required>
+      <label class="schedule-label" for="start-time">Start Time:</label>
+      <input class="modal-input schedule-input" type="time" id="start-time" name="start-time" required>
+      <label class="schedule-label" for="end-time">End Time:</label>
+      <input class="modal-input schedule-input" type="time" id="end-time" name="end-time" required>
+      <input class="modal-submit" type="submit" value="Schedule">
+    </form>
+  </div>
+</div>
+<script>
+  // Get the modal
+  var modal = document.getElementById("modal");
+  // Get the button that opens the modal
+  var btn = document.getElementById("schedule-btn");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks on the button, open the modal
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  // Handle form submission
+  document.getElementById("schedule-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    alert("Appointment Scheduled!");
+    modal.style.display = "none";
+  });
+</script>
+</body>
+</html>
