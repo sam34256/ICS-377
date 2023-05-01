@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Directory</title>
+  <link rel="stylesheet" href="search.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="dropdown">
+  <button class="hamburger-icon"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+  <div class="dropdown-content">
+    <a href="googleCALLENDER.html">Calendar</a>
+    <a href="Email.html">Email</a>
+    <a href="Message.html">Messaging</a>
+    <a href="Videocall.html">Video</a>
+    <a href="search.html">Search</a>
+    <a href="FILESHARING.html">Document Sharing</a>
+    <a href="Note.html">Notes</a>
+    <a href="EG.html">Log off</a>
+  </div>
+</div>
+<div class="logo-main">
+  <a href="EG.html"></a>
+</div>
+<div class="search-bar">
+  <input type="text" placeholder="Search for coworker..." onkeyup="searchEmployees()">
+  <button type="submit"><i class="fas fa-search"></i></button>
+</div>
+
+
+<div class="employee-card">
+  <img src="img/man5.jfif" alt="Profile Picture">
+  <div class="employee-info">
+    <h2>Adam Smith</h2>
+    <p>Position: Software Engineer</p>
+    <p>Rank: 3</p>
+    <div class="employee-actions">
+      <a href="Videocall.html"><i class="fas fa-video"></i></a>
+      <a href="Message.html"><i class="fas fa-comment-alt"></i></a>
+      <a href="Email.html"><i class="far fa-envelope"></i></a>
+    </div>
+  </div>
+</div>
+
+<div class="employee-card">
+  <img src="img/women1.jfif" alt="Profile Picture">
+  <div class="employee-info">
+    <h2>Emily Brown</h2>
+    <p>Position: Marketing Manager</p>
+    <p>Rank: 2</p>
+    <div class="employee-actions">
+      <a href="Videocall.html"><i class="fas fa-video"></i></a>
+      <a href="Message.html"><i class="fas fa-comment-alt"></i></a>
+      <a href="Email.html"><i class="far fa-envelope"></i></a>
+    </div>
+  </div>
+</div>
+
+<div class="employee-card">
+  <img src="img/man3.jfif" alt="Profile Picture">
+  <div class="employee-info">
+    <h2>Isaac Lee</h2>
+    <p>Position: Data Analyst</p>
+    <p>Rank: 1</p>
+    <div class="employee-actions">
+      <a href="Videocall.html"><i class="fas fa-video"></i></a>
+      <a href="Message.html"><i class="fas fa-comment-alt"></i></a>
+      <a href="Email.html"><i class="far fa-envelope"></i></a>
+    </div>
+  </div>
+</div>
+
+<div class="employee-card">
+  <img src="img/man4.jfif" alt="Profile Picture">
+  <div class="employee-info">
+    <h2>John Doe</h2>
+    <p>Position: Senior Developer</p>
+    <p>Rank: 4</p>
+    <div class="employee-actions">
+      <a href="Videocall.html"><i class="fas fa-video"></i></a>
+      <a href="Message.html"><i class="fas fa-comment-alt"></i></a>
+      <a href="Email.html"><i class="far fa-envelope"></i></a>
+    </div>
+  </div>
+</div>
+
+<div id="employee-list">
+  <div class="employee-card">
+    <img src="img/man1.jfif" alt="Profile Picture">
+    <div class="employee-info">
+      <h2>John David</h2>
+      <p>Position: Junior Developer</p>
+      <p>Rank: 4</p>
+
+      <div class="employee-actions">
+        <a href="Videocall.html"><i class="fas fa-video"></i></a>
+        <a href="Message.html"><i class="fas fa-comment-alt"></i></a>
+        <a href="Email.html"><i class="far fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+
+<div class="employee-card">
+  <img src="img/man2.jfif" alt="Profile Picture">
+  <div class="employee-info">
+    <h2>Zoe Wilson</h2>
+    <p>Position: HR Manager</p>
+    <p>Rank: 5</p>
+    <div class="employee-actions">
+      <a href="Videocall.html"><i class="fas fa-video"></i></a>
+      <a href="Message.html"><i class="fas fa-comment-alt"></i></a>
+      <a href="Email.html"><i class="far fa-envelope"></i></a>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<script src="js/search.js"></script>
+</body>
+</html>

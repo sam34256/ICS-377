@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reset Password</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    p{
+      text-align: center;
+      margin-top: 50px;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+    }
+    form {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+<h1>Reset Password</h1>
+<p>Enter the code you received by email and choose a new password.</p>
+<form name="resetForm" onsubmit="return validateForm()" method="post" action="#">
+  <label for="code">Verification Code:</label>
+  <input type="text" id="code" name="code" required>
+  <label for="password">New Password:</label>
+  <input type="password" id="password" name="password" required>
+  <label for="confirm_password">Confirm New Password:</label>
+  <input type="password" id="confirm_password" name="confirm_password" required>
+  <button type="submit">Reset Password</button>
+</form>
+<script>
+  function validateForm() {
+    var code = document.forms["resetForm"]["code"].value;
+    var password = document.forms["resetForm"]["password"].value;
+    var confirmPassword = document.forms["resetForm"]["confirm_password"].value;
+    if (code == "" || password == "" || confirmPassword == "") {
+      alert("All fields are required");
+      return false;
+    }
+
+    if (password != confirmPassword) {
+      alert("Passwords do not match");
+      return false;
+    }
+
+    // If the code is incorrect, show an error message and prevent form submission
+    if (code != "1478") {
+      alert("Incorrect code");
+      return false;
+    }
+    alert("Reset Completed");
+    setTimeout(function(){
+      window.location.href = "eg.html";
+    }, 5000);
+    // Redirect the user to the "reset_completed.html" page upon successful password reset
+    window.location.href = "Eg.html";
+    return false;
+  }
+</script>
+</body>
+</html>

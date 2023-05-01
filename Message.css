@@ -188,6 +188,7 @@ body {
 }
 
 .dropdown-content {
+  background-color: #fff;
   display: none;
   position: absolute;
   z-index: 1;
@@ -224,4 +225,15 @@ body {
 
 .dropdown-item {
   color: white;
+}
+
+.logo-main {
+  background-image: url('img/img.png');
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }

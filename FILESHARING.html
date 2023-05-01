@@ -2,16 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>File Sharing Page</title>
+  <title>Professional File Sharing Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="FILESHARING.css">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<header>
-  <div class="logo">
-    <img src="img/img.png" alt="Logo">
+<div class="dropdown">
+  <button class="hamburger-icon"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+  <div class="dropdown-content">
+    <a href="googleCALLENDER.html">Calendar</a>
+    <a href="Email.html">Email</a>
+    <a href="Message.html">Messaging</a>
+    <a href="Videocall.html">Video</a>
+    <a href="search.html">Search</a>
+    <a href="FILESHARING.html">Document Sharing</a>
+    <a href="Note.html">Notes</a>
+    <a href="EG.html">Log off</a>
   </div>
+</div>
+<div class="logo-main">
+</div>
+<header>
+
   <nav>
     <ul>
       <li><a href="#">Home</a></li>
@@ -21,86 +34,43 @@
     </ul>
   </nav>
   <div class="user">
-    <img src="img/profile.jpg" alt="User">
+    <img src="img/man4.jfif" alt="User">
     <span>John Doe</span>
     <i class="fas fa-angle-down"></i>
   </div>
 </header>
-
 <main>
   <div class="container">
-    <h1>My Files</h1>
+    <h1>Professional Files</h1>
     <div class="upload">
       <label for="file-upload"><i class="fas fa-cloud-upload-alt"></i>Upload Files</label>
       <input id="file-upload" type="file" multiple>
     </div>
-    <ul class="files">
-      <li>
-        <div class="file-icon">
-          <i class="far fa-file"></i>
-        </div>
-        <div class="file-info">
-          <h2>Document 1</h2>
-          <span>Size: 2.5 MB</span>
-          <span>Uploaded: 15-Apr-2023</span>
-        </div>
-        <div class="file-actions">
-          <a href="#" class="download"><i class="fas fa-download"></i></a>
-          <a href="#" class="delete"><i class="fas fa-trash-alt"></i></a>
-        </div>
-      </li>
-      <li>
-        <div class="file-icon">
-          <i class="fas fa-file-image"></i>
-        </div>
-        <div class="file-info">
-          <h2>Image 1</h2>
-          <span>Size: 1.2 MB</span>
-          <span>Uploaded: 14-Apr-2023</span>
-        </div>
-        <div class="file-actions">
-          <a href="#" class="download"><i class="fas fa-download"></i></a>
-          <a href="#" class="delete"><i class="fas fa-trash-alt"></i></a>
-        </div>
-      </li>
-      <li>
-        <div class="file-icon">
-          <i class="fas fa-file-audio"></i>
-        </div>
-        <div class="file-info">
-          <h2>Audio 1</h2>
-          <span>Size: 3.8 MB</span>
-          <span>Uploaded: 13-Apr-2023</span>
-        </div>
-        <div class="file-actions">
-          <a href="#" class="download"><i class="fas fa-download"></i></a>
-          <a href="#" class="delete"><i class="fas fa-trash-alt"></i></a>
-        </div>
-      </li>
+    <div class="search">
+      <input type="text" placeholder="Search for files or people to share with" id="search-input">
+      <button onclick="search()"><i class="fas fa-search"></i></button>
+    </div>
+    <ul class="files" id="files-list">
     </ul>
+    <div class="search">
+    <button><i class="fas fa-share"></i></button>
+    </div>
+  </div>
+  <div class="share-menu-container" id="share-menu-container">
+    <div class="share-menu" id="share-menu">
+      <form>
+        <h3>Share with:</h3>
+        <div class="share-to">
+          <input type="text" placeholder="To:" id="share-to-input">
+          <ul class="share-to-list" id="share-to-list">
+          </ul>
+        </div>
+
+        <button type="submit" onclick="share()">Share</button>
+      </form>
+    </div>
   </div>
 </main>
-<footer>
-  <div class="container">
-    <div class="footer-logo">
-      <img src="img/img.png" alt="Logo">
-    </div>
-    <div class="footer-menu">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Files</a></li>
-        <li><a href="#">Shared with me</a></li>
-        <li><a href="#">Trash</a></li>
-      </ul>
-    </div>
-    <div class="footer-social">
-      <ul>
-        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-      </ul>
-    </div>
-  </div>
-</footer>
+<script src="js/fileSharing.js"></script>
 </body>
 </html>

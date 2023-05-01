@@ -101,7 +101,74 @@
       background-color: #1c1c1e;
       color: #fff;
     }
+    .video img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+    }
+
+
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      background-color: white;
+      color: black;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .hamburger-icon {
+      display: inline-block;
+      cursor: pointer;
+      padding: 12px 16px;
+      color: white;
+      background-color: #333;
+      border: none;
+    }
+
+    .icon-bar {
+      display: block;
+      width: 22px;
+      height: 2px;
+      border-radius: 1px;
+      margin: 4px 0;
+      background-color: white;
+    }
+
+    .dropdown-item {
+      color: white;
+    }
+    .logo-main {
+      background-image: url('img/img.png');
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 50px;
+      height: 50px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+
   </style>
+  <script src="js/floatingNote.js"></script>
 </head>
 <body>
 <div class="dropdown">
@@ -111,10 +178,13 @@
     <a href="Email.html">Email</a>
     <a href="Message.html">Messaging</a>
     <a href="Videocall.html">Video</a>
-    <a href="#">Search</a>
+    <a href="search.html">Search</a>
     <a href="FILESHARING.html">Document Sharing</a>
-    <a href="#">Notes</a>
+    <a href="Note.html">Notes</a>
+    <a href="EG.html">Log off</a>
   </div>
+</div>
+<div class="logo-main">
 </div>
 <div class="container">
   <div class="header">
@@ -122,15 +192,15 @@
     <p>May 1, 2023 09:00 AM Eastern Time (US and Canada)</p>
   </div>
   <div class="video">
-    <img src="placeholder.jpg" alt="Zoom Meeting Video">
+    <img src="img/zoom.jfif" alt="Zoom Meeting Video">
   </div>
   <div class="sidebar">
     <h2>Meeting Information
     </h2>
     <ul>
-      <li><a href="#">Join Meeting</a></li>
-      <li><a href="#">Meeting ID: 123456789</a></li>
-      <li><a href="#">Passcode: 1234</a></li>
+      <li><a href="https://minnstate.zoom.us/j/94169121779">Join Meeting</a></li>
+      <li><a href="#">Meeting ID: 941 6912 1779</a></li>
+      <li><a href="#">Passcode: 781171</a></li>
       <li><a href="#">One tap mobile</a></li>
       <li><a href="#">Find your local number</a></li>
     </ul>
@@ -139,6 +209,9 @@
     <button>Copy Meeting Link</button>
     <button>Invite Others</button>
   </div>
+
 </div>
+
 </body>
+
 </html>

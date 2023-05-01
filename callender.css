@@ -110,14 +110,16 @@ h1 {
   background-color: #555;
 }
 
+
 .dropdown {
   position: relative;
   display: inline-block;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 .dropdown-content {
+  background-color: #fff;
   display: none;
   position: absolute;
   z-index: 1;
@@ -155,11 +157,32 @@ h1 {
 .dropdown-item {
   color: white;
 }
+.logo-main {
+  background-image: url('img/img.png');
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.user-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
 .iframe-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 

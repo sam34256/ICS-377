@@ -12,18 +12,14 @@
   </div>
   <div class="login-box">
     <h2>Login</h2>
-    <form>
+    <form id ='login-form'>
       <p>Email</p>
       <input type="email" name="email" placeholder="Enter Email" required>
       <p>Password</p>
       <input type="password" name="password" placeholder="Enter Password" required>
-      <input type="submit" name="submit" value="Login">
+      <input type="submit" name="submit"  value="Login">
       <div class="forgot-password">
-        <a href="#">Forgot Password?</a>
-      </div>
-      <div class="need-account">
-        <p>Need an account?</p>
-        <a href="#">Sign Up</a>
+        <a href="reset.html">Forgot Password?</a>
       </div>
     </form>
   </div>
@@ -37,5 +33,12 @@
     <p>Hive is proud to be partnering with the Minnesota Home Care Association to provide a powerful collaboration platform for their team members and volunteers. As a small non-profit organization, the Minnesota Home Care Association plays a critical role in supporting the home care industry in the state of Minnesota. We are honored to be able to support their important work through our platform.</p>
   </div>
 </div>
+<script>
+  const loginForm = document.getElementById('login-form');
+  loginForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // prevent the default form submission behavior
+    window.location.href = 'LandingPage.html'; // redirect the user to the landing.html page
+  });
+</script>
 </body>
 </html>

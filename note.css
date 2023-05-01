@@ -1,0 +1,119 @@
+.note-form {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  font-size: 16px;
+  color: #333;
+}
+
+input[type="file"] {
+  margin-top: 10px;
+}
+
+.note-actions {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.note-actions button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-out;
+}
+
+.note-actions button:hover {
+  background-color: #3e8e41;
+}
+
+#clear-btn {
+  background-color: #f44336;
+}
+
+#clear-btn:hover {
+  background-color: #c62828;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  background-color: white;
+  color: black;
+}
+
+.dropdown-content {
+  background-color: #fff;
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.hamburger-icon {
+  display: inline-block;
+  cursor: pointer;
+  padding: 12px 16px;
+  color: white;
+  background-color: #333;
+  border: none;
+}
+
+.icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  margin: 4px 0;
+  background-color: white;
+}
+
+.dropdown-item {
+  color: white;
+}
+.logo-main {
+  background-image: url('img/img.png');
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.user-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
