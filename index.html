@@ -1,82 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login Page</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-    }
-
-    .container {
-      margin: auto;
-      width: 400px;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0px 0px 10px #888;
-    }
-
-    input[type=text], input[type=password] {
-      padding: 10px;
-      width: 100%;
-      margin-bottom: 15px;
-      border: none;
-      border-radius: 5px;
-      box-sizing: border-box;
-      border: 1px solid #ccc;
-    }
-
-    input[type=submit] {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-right: 10px;
-    }
-
-    input[type=submit]:hover {
-      background-color: #45a049;
-    }
-
-    a {
-      color: #4CAF50;
-      text-decoration: none;
-    }
-
-    .forgot-password {
-      margin-top: 10px;
-      text-align: right;
-    }
-
-    .create-account {
-      margin-top: 10px;
-      text-align: center;
-    }
-  </style>
+  <title>Hive - Login</title>
+  <link rel="stylesheet" type="text/css" href="INDEX.css">
 </head>
 <body>
 <div class="container">
-  <h2>Login</h2>
-  <form action="#" method="post">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
-
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
-
-    <input type="submit" value="Login">
-  </form>
-
-  <div class="forgot-password">
-    <a href="#">Forgot Password?</a>
+  <div class="logo">
+    <img src="img/img.png" alt="Hive Logo">
+    <h1>Hive</h1>
   </div>
-
-  <div class="create-account">
-    Don't have an account? <a href="#">Create one</a>
+  <div class="login-box">
+    <h2>Login</h2>
+    <form id ='login-form'>
+      <p>Email</p>
+      <input type="email" name="email" placeholder="Enter Email" required>
+      <p>Password</p>
+      <input type="password" name="password" placeholder="Enter Password" required>
+      <input type="submit" name="submit"  value="Login">
+      <div class="forgot-password">
+        <a href="reset.html">Forgot Password?</a>
+      </div>
+    </form>
+  </div>
+  <div class="wave"></div>
+  <div class="content">
+    <h3>About Hive</h3>
+    <p>Hive is a powerful platform for remote team collaboration. With Hive, you can easily connect with your team members, no matter where you are located. Whether you're working from home or traveling abroad, Hive makes it easy to stay connected and get work done.</p>
+    <h3>Our Mission</h3>
+    <p>At Hive, our mission is to empower organizations to work smarter, not harder. We believe that by providing powerful collaboration tools and resources, we can help teams achieve their goals more efficiently and effectively. We are committed to providing exceptional service and support to our customers, and we strive to constantly improve our platform to meet their evolving needs.</p>
+    <h3>Minnesota Home Care Association</h3>
+    <p>Hive is proud to be partnering with the Minnesota Home Care Association to provide a powerful collaboration platform for their team members and volunteers. As a small non-profit organization, the Minnesota Home Care Association plays a critical role in supporting the home care industry in the state of Minnesota. We are honored to be able to support their important work through our platform.</p>
   </div>
 </div>
+<script>
+  const loginForm = document.getElementById('login-form');
+  loginForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // prevent the default form submission behavior
+    window.location.href = 'LandingPage.html'; // redirect the user to the landing.html page
+  });
+</script>
 </body>
 </html>
